@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "761544089246",
+    "project_id": "herody-6473f",
+    "storage_bucket": "herody-6473f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761544089246:android:aa0d2ccf70601cc7a5258f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "761544089246-cd9sat7rqlov4vndu3kgkvghrd03tkbr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApjXHwRngYiwurPM-ZetOWzMV1ChrenyY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "761544089246-cd9sat7rqlov4vndu3kgkvghrd03tkbr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "761544089246-dgnit6ajaqrepabao1uujh8a6o34m3so.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

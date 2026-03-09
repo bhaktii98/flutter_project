@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import 'core/res/app_theme.dart';
 import 'features/auth/presentation/state/auth_notifier.dart';
+import 'features/auth/presentation/views/auth_landing_page.dart';
 import 'features/auth/presentation/views/register_page.dart';
 import 'features/auth/presentation/views/sign_in_page.dart';
 import 'features/todos/presentation/state/todo_notifier.dart';
@@ -39,6 +40,7 @@ class TodoApp extends StatelessWidget {
             title: 'Todo App',
             theme: buildAppTheme(),
             routes: {
+              AuthLandingPage.routeName: (_) => const AuthLandingPage(),
               SignInPage.routeName: (_) => const SignInPage(),
               RegisterPage.routeName: (_) => const RegisterPage(),
               TodoListPage.routeName: (_) => const TodoListPage(),
@@ -47,7 +49,7 @@ class TodoApp extends StatelessWidget {
                 ? const _SplashScreen()
                 : auth.isAuthenticated
                     ? const TodoListPage()
-                    : const SignInPage(),
+                    : const AuthLandingPage(),
           );
         },
       ),

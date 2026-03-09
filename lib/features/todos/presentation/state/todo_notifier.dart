@@ -53,6 +53,7 @@ class TodoNotifier extends ChangeNotifier {
         title: title,
         description: description,
         isCompleted: false,
+        status: 'todo',
         createdAt: DateTime.now(),
       );
       final created = await _repository.addTodo(_user!.id, todo);
@@ -64,8 +65,13 @@ class TodoNotifier extends ChangeNotifier {
     }
   }
 
-  Future<void> updateTodo(Todo todo,
-      {String? title, String? description, bool? isCompleted}) async {
+  Future<void> updateTodo(
+    Todo todo, {
+    String? title,
+    String? description,
+    bool? isCompleted,
+    String? status,
+  }) async {
     if (_user == null) return;
     _setLoading(true);
     try {
@@ -74,6 +80,7 @@ class TodoNotifier extends ChangeNotifier {
         title: title ?? todo.title,
         description: description ?? todo.description,
         isCompleted: isCompleted ?? todo.isCompleted,
+        status: status ?? todo.status,
       );
       await _repository.updateTodo(_user!.id, updated);
       _todos = _todos

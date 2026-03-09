@@ -8,14 +8,14 @@ ThemeData buildAppTheme() {
 
   return base.copyWith(
     colorScheme: ColorScheme.fromSeed(
-      seedColor: AppColors.primary,
-      primary: AppColors.primary,
-      secondary: AppColors.accent,
-      background: AppColors.background,
+      seedColor: AppColors.themeColor,
+      primary: AppColors.themeColor,
+      secondary: AppColors.accentColor,
+      background: Colors.white,
     ),
-    scaffoldBackgroundColor: AppColors.background,
+    scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.surface,
+      backgroundColor: Colors.transparent,
       elevation: 0,
       centerTitle: true,
       titleTextStyle: AppTextStyles.h2,
@@ -23,29 +23,29 @@ ThemeData buildAppTheme() {
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: AppColors.surface,
+      fillColor: AppColors.fieldBackgroundColor,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: Color(0xFFE5E7EB)),
+        borderSide: BorderSide.none,
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: Color(0xFFE5E7EB)),
+        borderSide: BorderSide.none,
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: AppColors.primary, width: 1.6),
+        borderSide: const BorderSide(color: AppColors.themeColor, width: 1.6),
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primary,
+        backgroundColor: AppColors.themeColor,
         foregroundColor: Colors.white,
         textStyle: AppTextStyles.button,
         elevation: 0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(24),
         ),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
       ),
@@ -55,7 +55,7 @@ ThemeData buildAppTheme() {
       fillColor: MaterialStateProperty.resolveWith<Color?>(
         (states) {
           if (states.contains(MaterialState.selected)) {
-            return AppColors.primary;
+            return AppColors.themeColor;
           }
           return null;
         },

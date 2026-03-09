@@ -3,6 +3,7 @@ class Todo {
   final String title;
   final String? description;
   final bool isCompleted;
+  final String status; // todo, in_progress, done
   final DateTime createdAt;
 
   const Todo({
@@ -10,6 +11,7 @@ class Todo {
     required this.title,
     this.description,
     required this.isCompleted,
+    required this.status,
     required this.createdAt,
   });
 
@@ -18,6 +20,7 @@ class Todo {
     String? title,
     String? description,
     bool? isCompleted,
+    String? status,
     DateTime? createdAt,
   }) {
     return Todo(
@@ -25,6 +28,7 @@ class Todo {
       title: title ?? this.title,
       description: description ?? this.description,
       isCompleted: isCompleted ?? this.isCompleted,
+      status: status ?? this.status,
       createdAt: createdAt ?? this.createdAt,
     );
   }
@@ -35,6 +39,7 @@ class Todo {
       title: map['title'] as String? ?? '',
       description: map['description'] as String?,
       isCompleted: map['isCompleted'] as bool? ?? false,
+      status: map['status'] as String? ?? 'todo',
       createdAt: DateTime.tryParse(map['createdAt'] as String? ?? '') ??
           DateTime.now(),
     );
@@ -45,6 +50,7 @@ class Todo {
       'title': title,
       'description': description,
       'isCompleted': isCompleted,
+      'status': status,
       'createdAt': createdAt.toIso8601String(),
     };
   }
